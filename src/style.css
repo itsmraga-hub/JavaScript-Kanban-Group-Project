@@ -6,7 +6,54 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  background-image: linear-gradient(to right, #05f140ce, #05f1404f);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+}
+
+/* Header styles */
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5em;
+  font-size: 2.5em;
+  height: 8vh;
+  padding: 2em 3em;
+}
+
+.header-container .logo {
+  text-decoration: none;
+  background-color: #05f1dd;
+  border: 1px solid crimson;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 3px 3px;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+/* Main styles */
+
+
+/* Footer styles */
+.footer-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  font-size: 2em;
+  padding: 0.5em;
+}
+
+.footer-container .footer-text {
+  text-align: center;
 }
