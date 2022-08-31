@@ -19,17 +19,17 @@ const getLikes = async () => {
   return likes;
 };
 
-// const comment = async (obj) => {
-//   await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Ze2AYZiZd2P7VZfM9LGL/comments', {
-//     method: 'POST',
-//     body: JSON.stringify(obj),
-//     headers: {
-//       Accept: 'application/json',
-//       'Content-Type': 'application/json',
-//       'Access-Control-Allow-Origin': '*',
-//     },
-//   });
-// };
+const comment = async (obj) => {
+  await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Ze2AYZiZd2P7VZfM9LGL/comments', {
+    method: 'POST',
+    body: JSON.stringify(obj),
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+  });
+};
 
 // const getComments = async (id) => {
 //   const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Ze2AYZiZd2P7VZfM9LGL/comments?item_id=${id}`, {
