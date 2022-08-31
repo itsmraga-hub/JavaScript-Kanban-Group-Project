@@ -1,3 +1,4 @@
+import { likeItem } from './involvement.js';
 import displayMovies from './landingPage.js';
 import { createModal, hideModal } from './modal.js';
 
@@ -29,6 +30,15 @@ const loadDefault = async () => {
       const id = e.target.getAttribute('data-id');
       loadMovieInfo(id);
       document.querySelector('.movies-list').style.filter = 'blur(5px)';
+    });
+  });
+  const likeBtns = document.querySelectorAll('.like-btn');
+  likeBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const id = e.target.getAttribute('data-id');
+      const obj = { item_id: `item_${id}` };
+      console.log(obj);
+      likeItem(obj);
     });
   });
 };
