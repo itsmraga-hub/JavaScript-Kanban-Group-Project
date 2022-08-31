@@ -24,9 +24,11 @@ const loadDefault = async () => {
   });
   const data = await response.json();
   const AllLikes = await getLikes();
-  for (let i = 0; i < AllLikes.length; i += 1) {
-    if (data.find((obj) => obj.id === Number(AllLikes[i].item_id))) {
-      data.find((obj) => obj.id === Number(AllLikes[i].item_id)).likes = AllLikes[0].item_id;
+  for (let j = 0; j < data.length; j += 1) {
+    for (let i = 0; i < AllLikes.length; i += 1) {
+      if (data[j].id === Number(AllLikes[i].item_id)) {
+        data[j].likes = AllLikes[i].likes;
+      }
     }
   }
   displayMovies(data);
@@ -43,7 +45,9 @@ const loadDefault = async () => {
     btn.addEventListener('click', (e) => {
       const id = e.target.getAttribute('data-id');
       const obj = { item_id: `${id}` };
-      console.log(obj);
+      let num = Number(e.target.parentElement.children[1].textContent.split(' ')[0]);
+      num += 1;
+      e.target.parentElement.children[1].textContent = `${num} likes`;
       likeItem(obj);
     });
   });

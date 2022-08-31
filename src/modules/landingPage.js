@@ -10,7 +10,7 @@ const displayMovies = async (movies) => {
         <button class="btn comment-popup-btns" data-id="${movie.id}">Comment</button>
         <div class="like">
         <i class="fa-solid fa-thumbs-up like-btn" data-id="${movie.id}" data-name="${movie.name}"></i>
-          <small>${movie.likes || 0} likes</small>
+          <small class='like-display' data-id='${movie.id}'>${movie.likes || 0} likes</small>
         </div>
       </div>
     </div>
