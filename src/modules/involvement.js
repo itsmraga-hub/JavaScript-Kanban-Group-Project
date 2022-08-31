@@ -14,4 +14,13 @@ const likeItem = async (obj) => {
     const data = await response.json();
     console.log(`William ${data}`);
   };
+  const getLikes = async () => {
+    const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RB6pP8G8jnznBHB4AnTK/likes', {
+      method: 'GET',
+    });
+    const likes = response.json();
+    return likes;
+  };
+  
+  export { likeItem, getLikes };
   
