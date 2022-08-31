@@ -88,12 +88,11 @@ const createModal = async (id, movie) => {
     </div>
   </div>
 </div>`;
-  const btn = document.querySelector('#closeModal');
-  console.log(btn);
+  // const btn = document.querySelector('#closeModal');
+  // console.log(btn);
   const form = document.querySelector('#form');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('William');
     formData(form);
   });
 };
