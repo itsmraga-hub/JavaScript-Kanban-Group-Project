@@ -16,4 +16,4 @@ const formData = (form) => {
   }
 };
 
-// export default formData;
+export default formData;
