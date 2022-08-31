@@ -222,6 +222,13 @@ body {
   padding: 1em;
 }
 
+.modal-container .inner-modal .modal-content .comments-container {
+  border: 1px solid white;
+  margin: 2em 4em;
+  padding: 1em;
+  background-color: #6374be;
+}
+
 .modal-container .inner-modal .modal-content .comments-container  h3 {
   text-align: center;
   padding-bottom: 1rem;
@@ -231,8 +238,16 @@ body {
   align-self: center;
   text-align: center;
   list-style: none;
-  height: 5em;
+  height: 8em;
+  height: fit-content(5em);
   overflow-y: scroll;
+}
+.modal-container .inner-modal .modal-content .comments-container .comments-list li {
+  padding: 0.25em;
+}
+
+.modal-container .inner-modal .modal-content .comments-container .comments-list::-webkit-scrollbar {
+  display: none;
 }
 
 .modal-container .inner-modal .modal-content .form-container {
