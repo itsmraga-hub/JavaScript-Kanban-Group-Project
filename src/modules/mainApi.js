@@ -1,4 +1,4 @@
-import { likeItem } from './involvement.js';
+import { getLikes, likeItem } from './involvement.js';
 import displayMovies from './landingPage.js';
 import { createModal, hideModal } from './modal.js';
 
@@ -23,6 +23,12 @@ const loadDefault = async () => {
     method: 'GET',
   });
   const data = await response.json();
+  const AllLikes = await getLikes();
+  for (let i = 0; i < AllLikes.length; i += 1) {
+    if (data.find((obj) => obj.id === Number(AllLikes[i].item_id))) {
+      data.find((obj) => obj.id === Number(AllLikes[i].item_id)).likes = AllLikes[0].item_id;
+    }
+  }
   displayMovies(data);
   const commentBtns = document.querySelectorAll('.comment-popup-btns');
   commentBtns.forEach((btn) => {
@@ -36,7 +42,7 @@ const loadDefault = async () => {
   likeBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       const id = e.target.getAttribute('data-id');
-      const obj = { item_id: `item_${id}` };
+      const obj = { item_id: `${id}` };
       console.log(obj);
       likeItem(obj);
     });
