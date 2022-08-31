@@ -16,9 +16,10 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 62.5%;
   overflow-x: hidden;
+  overflow-y: hidden;
   background-image: linear-gradient(to right, #05f140ce, #05f1404f);
   background-size: cover;
-  /* background-repeat: no-repeat; */
+  height: 100vh;
 }
 
 /* Header styles */
@@ -26,7 +27,7 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 5em;
+  gap: 7em;
   font-size: 2.5em;
   height: 8vh;
   padding: 2em 3em;
@@ -42,8 +43,93 @@ body {
   letter-spacing: 0.1rem;
 }
 
-/* Main styles */
+.header-container .lists {
+  display: flex;
+  gap: 3em;
+}
 
+.header-container .lists .text-heading {
+  text-decoration: none;
+}
+
+/* Main styles */
+.main-container {
+  width: 100%;
+  height: 92vh;
+}
+
+.movies-list {
+  height: 80vh;
+  width: 100%;
+  padding: 1em;
+  list-style: none;
+  overflow-y: scroll;
+  font-size: 2em;
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movies-list::-webkit-scrollbar {
+  display: none;
+}
+
+.movies-list .movie-info-container {
+  width: 10em;
+  aspect-ratio: 1 / 1.3;
+  display: flex;
+  flex-direction: column;
+}
+
+.movies-list .movie-info-container .img-placeholder {
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 10em;
+  aspect-ratio: 1 / 1.3;
+}
+
+.movies-list .movie-info-container .movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.5em 0;
+}
+
+.movies-list .movie-info-container .movie .movie-title {
+  text-align: center;
+}
+
+.movies-list .movie-info-container .movie .comment-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.movies-list .movie-info-container .movie .comment-section .btn {
+  padding: 0.1rem 0.25rem;
+  border: 0px;
+  background-color: #05f1404f;
+  background-image: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.movies-list .movie-info-container .movie .comment-section .like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+}
+
+.movies-list .movie-info-container .movie .comment-section .like svg {
+  width: 30px;
+}
+
+.movies-list .movie-info-container .movie .comment-section .like svg path {
+  fill: #0530f1;
+}
 
 /* Footer styles */
 .footer-container {
@@ -51,9 +137,131 @@ body {
   position: absolute;
   bottom: 0;
   font-size: 2em;
-  padding: 0.5em;
+  padding: 0.5em 0 0 0;
 }
 
 .footer-container .footer-text {
   text-align: center;
+}
+
+/* Modal styling */
+.modal-container {
+  position: absolute;
+  font-size: 2em;
+  inset: 1.5em;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: scroll;
+  color: #fff;
+}
+
+.modal-container .modal-header {
+  padding: 2em 0 0 2em;
+}
+
+.modal-container .modal-header svg {
+  width: 30px;
+  cursor: pointer;
+}
+
+.modal-container .inner-modal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2em 1em 2em;
+}
+
+.modal-container .inner-modal .img-placeholder {
+  width: 100%;
+  background-image: url('https://static.tvmaze.com/uploads/images/medium_portrait/163/407679.jpg');
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 10em;
+  aspect-ratio: 1 / 1.25;
+}
+
+.modal-container .inner-modal .modal-content {
+  width: 100%;
+}
+
+.modal-container .inner-modal .modal-content .movie-title {
+  text-align: center;
+  padding: 1rem;
+}
+
+.modal-container .inner-modal .modal-content .movie-info {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5rem;
+  padding: 0 3em;
+}
+
+.modal-container .inner-modal .modal-content .movie-info .movie-info-item {
+
+}
+
+.modal-container .inner-modal .modal-content .movie-info .container .genres-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-container .inner-modal .modal-content .movie-info .container .genres-container .genres {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.modal-container .inner-modal .modal-content .movie-info .container .genres-container .genres .genres-item {
+  font-size: 1rem;
+}
+
+.modal-container .inner-modal .modal-content .summary {
+  padding: 1em;
+}
+
+.modal-container .inner-modal .modal-content .comments-container  h3 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.modal-container .inner-modal .modal-content .comments-container .comments-list {
+  align-self: center;
+  text-align: center;
+  list-style: none;
+  height: 5em;
+  overflow-y: scroll;
+}
+
+.modal-container .inner-modal .modal-content .form-container {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.modal-container .inner-modal .modal-content .form-container h3 {
+  text-align: center;
+}
+
+.modal-container .inner-modal .modal-content .form-container .form {
+  padding: 1em;
+  font-size: 2em;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.modal-container .inner-modal .modal-content .form-container .form .input-cls {
+  padding: 1em;
+}
+
+.modal-container .inner-modal .modal-content .form-container .form textarea {
+
+}
+
+.modal-container .inner-modal .modal-content .form-container .form .btn {
+  width: max-content;
+  padding: 1em;
+  margin: auto;
 }
