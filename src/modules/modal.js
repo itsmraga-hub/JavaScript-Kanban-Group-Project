@@ -1,7 +1,7 @@
+import formData from './commentForm.js';
+
 const hideModal = (e) => {
   document.querySelector('.movies-list').style.filter = 'blur(0px)';
-  console.log(e.target.parentElement.parentElement);
-  // document.querySelector('.modal-container').remove();
   e.target.parentElement.parentElement.remove();
 };
 const createModal = async (id, movie) => {
@@ -64,7 +64,7 @@ const createModal = async (id, movie) => {
       </div>
       <div class="form-container">
         <h3>Add a Comment</h3>
-        <form action="./" class="form">
+        <form action="./" class="form" data-id="${movie.id}" id="form">
           <input
             type="text"
             name="name"
@@ -82,14 +82,19 @@ const createModal = async (id, movie) => {
             placeholder="Your message"
             required
           ></textarea>
-          <input type="button" class="btn" id="Comment" value="Comment" />
+          <input type="submit" class="btn" id="Comment" value="Comment" />
         </form>
       </div>
     </div>
   </div>
 </div>`;
-  const btn = document.querySelector('#closeModal');
-  console.log(btn);
-  // btn.addEventListener('click', hideModal());
+  // const btn = document.querySelector('#closeModal');
+  // console.log(btn);
+  // const form = document.querySelector('#form');
+  // form.addEventListener('submit', (e) => {
+  //   e.preventDefault();
+  //   console.log('William');
+  //   formData(form);
+  // });
 };
 export { createModal, hideModal };
