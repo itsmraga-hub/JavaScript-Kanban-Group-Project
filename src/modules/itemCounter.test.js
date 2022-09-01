@@ -1,8 +1,6 @@
 import itemsAPIStorage from '../../__mocks__/storage.js';
 import itemsCounter from './itemsCounter.js';
 
-const itemsArr = itemsAPIStorage;
-
 /**
  * @jest-environment jsdom
  */
