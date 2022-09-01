@@ -154,11 +154,15 @@ body {
   color: #fff;
 }
 
+.modal-container::-webkit-scrollbar {
+  display: none;
+}
+
 .modal-container .modal-header {
   padding: 2em 0 0 2em;
 }
 
-.modal-container .modal-header svg {
+.modal-container .modal-header i {
   width: 30px;
   cursor: pointer;
 }
@@ -199,7 +203,7 @@ body {
 }
 
 .modal-container .inner-modal .modal-content .movie-info .movie-info-item {
-
+  margin: auto;
 }
 
 .modal-container .inner-modal .modal-content .movie-info .container .genres-container {
@@ -236,11 +240,15 @@ body {
 
 .modal-container .inner-modal .modal-content .comments-container .comments-list {
   align-self: center;
-  text-align: center;
+  text-align: left;
   list-style: none;
   height: 8em;
   height: fit-content(5em);
+  width: 60%;
   overflow-y: scroll;
+  margin: auto;
+  border: 0 solid #fff;
+  box-shadow: 2px 2px 4px 4px #05f140ce;
 }
 .modal-container .inner-modal .modal-content .comments-container .comments-list li {
   padding: 0.25em;
@@ -251,7 +259,7 @@ body {
 }
 
 .modal-container .inner-modal .modal-content .form-container {
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -269,14 +277,18 @@ body {
 
 .modal-container .inner-modal .modal-content .form-container .form .input-cls {
   padding: 1em;
+  border-radius: 4px;
 }
 
 .modal-container .inner-modal .modal-content .form-container .form textarea {
-
+  border-radius: 4px;
 }
 
 .modal-container .inner-modal .modal-content .form-container .form .btn {
   width: max-content;
-  padding: 1em;
+  font-size: 1.25rem;
+  padding: 0.5em 1em;
   margin: auto;
+  border-radius: 8px;
+  letter-spacing: 1px;
 }
