@@ -18,4 +18,6 @@ const displayMovies = async (movies) => {
   });
 };
 
-export default displayMovies;
+const allItemsCounter = async (arr) => arr.length;
+
+export { displayMovies, allItemsCounter };
