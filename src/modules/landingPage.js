@@ -1,4 +1,7 @@
+const allItemsCounter = (arr) => arr.length;
+
 const container = document.querySelector('.movies-list');
+
 const displayMovies = async (movies) => {
   container.innerHTML = '';
   movies.forEach((movie, i) => {
@@ -17,7 +20,5 @@ const displayMovies = async (movies) => {
   </li>`;
   });
 };
-
-const allItemsCounter = async (arr) => arr.length;
 
 export { displayMovies, allItemsCounter };

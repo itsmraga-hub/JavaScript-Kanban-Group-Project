@@ -12,7 +12,7 @@ const generateComments = (arr) => {
   if (arr.length >= 1) {
     return comment.slice(9);
   }
-  return 'No comments yet';
+  return '';
 };
 
 const loadMovieInfo = async (id) => {
@@ -47,7 +47,7 @@ const loadDefault = async () => {
     }
   }
   displayMovies(data);
-  const items = await allItemsCounter(data);
+  const items = allItemsCounter(data);
   document.querySelector('.items-count').innerHTML = `(${items})`;
   const commentBtns = document.querySelectorAll('.comment-popup-btns');
   commentBtns.forEach((btn) => {
