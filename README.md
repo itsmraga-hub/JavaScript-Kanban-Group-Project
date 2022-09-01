@@ -52,7 +52,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Run tests
 
-- `npm jest`
+- `npm test`
 
 ### Deployment
 
@@ -60,7 +60,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Testing
 
-- Jest javacript framework.
+- Jest javacript package provided by npm.
+- To get started with jest view [this article](https://jestjs.io/docs/getting-started).
 
 ## Authors
 
