@@ -73,9 +73,12 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Emem Cookey](https://github.com/ecekpo
+)
+- Twitter: [@Emem Cookey](https://twitter.com/ememcookey
+)
+- LinkedIn: [@Emem Cookey](https://www.linkedin.com/in/emem-ekpo-857135234/
+)
 
 ## 🤝 Contributing
 
