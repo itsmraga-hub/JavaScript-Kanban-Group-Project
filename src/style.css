@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@400;500&family=Open+Sans&family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-image: linear-gradient(to right, #05f140ce, #05f1404f);
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Header styles */
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 7em;
+  font-size: 2.5em;
+  height: 8vh;
+  padding: 2em 3em;
+}
+
+.header-container .logo {
+  text-decoration: none;
+  background-color: #05f1dd;
+  border: 1px solid crimson;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 3px 3px;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.header-container .lists {
+  display: flex;
+  gap: 3em;
+}
+
+.header-container .lists .text-heading {
+  text-decoration: none;
+}
+
+/* Main styles */
+.main-container {
+  width: 100%;
+  height: 92vh;
+}
+
+.movies-list {
+  height: 80vh;
+  width: 100%;
+  padding: 1em;
+  list-style: none;
+  overflow-y: scroll;
+  font-size: 2em;
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movies-list::-webkit-scrollbar {
+  display: none;
+}
+
+.movies-list .movie-info-container {
+  width: 10em;
+  display: flex;
+  flex-direction: column;
+}
+
+.movies-list .movie-info-container .img-placeholder {
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 10em;
+  height: 12.5em;
+}
+
+.movies-list .movie-info-container .movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.5em 0;
+}
+
+.movies-list .movie-info-container .movie .movie-title {
+  text-align: center;
+}
+
+.movies-list .movie-info-container .movie .comment-section {
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.movies-list .movie-info-container .movie .comment-section .btn {
+  padding: 0.5em;
+  border: 0;
+  background-color: #05f1404f;
+  background-image: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.movies-list .movie-info-container .movie .comment-section .like {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+}
+
+.modal-container .modal-header i {
+  width: 30px;
+  cursor: pointer;
+}
+
+.modal-popup .title {
+  display: none;
+}
+
+.movies-list .movie-info-container .movie .comment-section .like i {
+  color: #0530f1;
+  cursor: pointer;
+}
+
+.movies-list .movie-info-container .movie .comment-section .like small {
+  display: block;
+}
+
+/* Footer styles */
+.footer-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  font-size: 2em;
+  padding: 0.5em 0 0 0;
+}
+
+.footer-container .footer-text {
+  text-align: center;
+}
+
+/* Modal styling */
+.modal-container {
+  position: absolute;
+  font-size: 2em;
+  inset: 1.5em;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: scroll;
+  color: #fff;
+}
+
+.modal-container::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-container .modal-header {
+  padding: 2em 0 0 2em;
+}
+
+.modal-container .inner-modal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2em 1em 2em;
+}
+
+.modal-container .inner-modal .img-placeholder {
+  background-image: url('https://static.tvmaze.com/uploads/images/medium_portrait/163/407679.jpg');
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 10em;
+  height: 12.5em;
+}
+
+.modal-container .inner-modal .modal-content {
+  width: 100%;
+}
+
+.modal-container .inner-modal .modal-content .movie-title {
+  text-align: center;
+  padding: 1rem;
+}
+
+.modal-container .inner-modal .modal-content .movie-info {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5rem;
+  padding: 0 3em;
+}
+
+.modal-container .inner-modal .modal-content .movie-info .movie-info-item {
+  margin: auto;
+}
+
+.modal-container .inner-modal .modal-content .movie-info .container .genres-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-container .inner-modal .modal-content .movie-info .container .genres-container .genres {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.modal-container .inner-modal .modal-content .movie-info .container .genres-container .genres .genres-item {
+  font-size: 1rem;
+}
+
+.modal-container .inner-modal .modal-content .summary {
+  padding: 1em;
+}
+
+.modal-container .inner-modal .modal-content .comments-container {
+  border: 1px solid white;
+  margin: 2em 4em;
+  padding: 1em;
+  background-color: #6374be;
+}
+
+.modal-container .inner-modal .modal-content .comments-container h3 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.modal-container .inner-modal .modal-content .comments-container .comments-list {
+  align-self: center;
+  text-align: left;
+  list-style: none;
+  height: 8em;
+  height: fit-content(5em);
+  width: 60%;
+  overflow-y: scroll;
+  margin: auto;
+  border: 0 solid #fff;
+  box-shadow: 2px 2px 4px 4px #05f140ce;
+}
+
+.modal-container .inner-modal .modal-content .comments-container .comments-list li {
+  padding: 0.25em;
+}
+
+.modal-container .inner-modal .modal-content .comments-container .comments-list::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-container .inner-modal .modal-content .form-container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.modal-container .inner-modal .modal-content .form-container h3 {
+  text-align: center;
+}
+
+.modal-container .inner-modal .modal-content .form-container .form {
+  padding: 1em;
+  font-size: 2em;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.modal-container .inner-modal .modal-content .form-container .form .input-cls {
+  padding: 1em;
+  border-radius: 4px;
+}
+
+.modal-container .inner-modal .modal-content .form-container .form textarea {
+  border-radius: 4px;
+}
+
+.modal-container .inner-modal .modal-content .form-container .form .btn {
+  width: max-content;
+  font-size: 1.25rem;
+  padding: 0.5em 1em;
+  margin: auto;
+  border-radius: 8px;
+  letter-spacing: 1px;
+}
