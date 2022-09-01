@@ -69,8 +69,6 @@ const createModal = async (id, movie, comments, num) => {
     </div>
   </div>
 </div>`;
-  const btn = document.querySelector('#closeModal');
-  console.log(btn);
   const form = document.querySelector('#form');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
