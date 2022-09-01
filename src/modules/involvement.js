@@ -1,6 +1,5 @@
 const likeItem = async (obj) => {
-  // eslint-disable-next-line no-unused-vars
-  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Ze2AYZiZd2P7VZfM9LGL/likes/', {
+ await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Ze2AYZiZd2P7VZfM9LGL/likes/', {
     method: 'POST',
     body: JSON.stringify(obj),
     headers: {
