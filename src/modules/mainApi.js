@@ -22,7 +22,6 @@ const loadMovieInfo = async (id) => {
   const movie = await response.json();
   const AllComments = await getComments(id);
   const comments = generateComments(AllComments) || [];
-  console.log(comments);
   createModal(id, movie, comments, AllComments.length);
   const commentBtns = document.querySelectorAll('.comment-popup-btns');
   commentBtns.forEach((btn) => {
