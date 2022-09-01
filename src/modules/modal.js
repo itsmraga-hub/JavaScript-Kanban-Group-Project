@@ -69,23 +69,23 @@ const createModal = async (id, movie, comments, num) => {
     </div>
   </div>
 </div>`;
-  // const btn = document.querySelector('#closeModal');
-  // console.log(btn);
-  // const form = document.querySelector('#form');
-  // form.addEventListener('submit', (e) => {
-  //   e.preventDefault();
-  //   if (form[0].value && form[1].value) {
-  //     let num = Number(e.target.parentElement.parentElement.children[3].children[0].textContent.split(' ')[1]);
-  //     num += 1;
-  //     e.target.parentElement.parentElement.children[3].children[0].textContent = `Comments ${num}`;
-  //     e.target.parentElement.parentElement.children[3].children[1].innerHTML += `<li class="comment">${today} ${form[0].value}: ${form[1].value} </li>`;
-  //     formData(form);
-  //   }
+  const btn = document.querySelector('#closeModal');
+  console.log(btn);
+  const form = document.querySelector('#form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (form[0].value && form[1].value) {
+      let num = Number(e.target.parentElement.parentElement.children[3].children[0].textContent.split(' ')[1]);
+      num += 1;
+      e.target.parentElement.parentElement.children[3].children[0].textContent = `Comments ${num}`;
+      e.target.parentElement.parentElement.children[3].children[1].innerHTML += `<li class="comment">${today} ${form[0].value}: ${form[1].value} </li>`;
+      formData(form);
+    }
 
-  //   const commentsOnPage = document.querySelectorAll('comment');
-  //   const arr = Array.from(commentsOnPage);
-  //   // eslint-disable-next-line no-unused-vars
-  //   const numOfComments = commentCounter(arr);
-  // });
+    const commentsOnPage = document.querySelectorAll('comment');
+    const arr = Array.from(commentsOnPage);
+    // eslint-disable-next-line no-unused-vars
+    const numOfComments = commentCounter(arr);
+  });
 };
 export { createModal, hideModal, commentCounter };
