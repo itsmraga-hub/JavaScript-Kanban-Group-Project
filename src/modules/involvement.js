@@ -1,5 +1,5 @@
 const likeItem = async (obj) => {
- await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Ze2AYZiZd2P7VZfM9LGL/likes/', {
+  await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Ze2AYZiZd2P7VZfM9LGL/likes/', {
     method: 'POST',
     body: JSON.stringify(obj),
     headers: {

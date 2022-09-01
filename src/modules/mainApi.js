@@ -1,5 +1,5 @@
 import { getComments, getLikes, likeItem } from './involvement.js';
-import displayMovies from './landingPage.js';
+import { displayMovies, allItemsCounter } from './landingPage.js';
 import { createModal, hideModal } from './modal.js';
 
 const generateComments = (arr) => {
@@ -47,6 +47,8 @@ const loadDefault = async () => {
     }
   }
   displayMovies(data);
+  const items = await allItemsCounter(data);
+  document.querySelector('.items-count').innerHTML = `(${items})`;
   const commentBtns = document.querySelectorAll('.comment-popup-btns');
   commentBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
