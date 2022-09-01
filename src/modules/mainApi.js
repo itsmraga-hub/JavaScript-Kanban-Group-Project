@@ -62,7 +62,7 @@ const loadDefault = async () => {
       const obj = { item_id: `${id}` };
       let num = Number(e.target.parentElement.children[1].textContent.split(' ')[0]);
       num += 1;
-      e.target.parentElement.children[1].textContent = `${num} likes`;
+      e.target.parentElement.children[1].textContent = `${num}`;
       likeItem(obj);
     });
   });
