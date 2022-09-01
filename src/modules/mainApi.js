@@ -1,13 +1,29 @@
-import { getLikes, likeItem } from './involvement.js';
+import { getComments, getLikes, likeItem } from './involvement.js';
 import displayMovies from './landingPage.js';
 import { createModal, hideModal } from './modal.js';
+
+const generateComments = (arr) => {
+  let comment;
+  arr.forEach((comm) => {
+    if (comm) {
+      comment += `<li class="comment">${comm.creation_date} ${comm.username}: ${comm.comment}</li>`;
+    }
+  });
+  if (arr.length >= 1) {
+    return comment.slice(9);
+  }
+  return 'No comments yet';
+};
 
 const loadMovieInfo = async (id) => {
   const response = await fetch(`https://api.tvmaze.com/shows/${id}`, {
     method: 'GET',
   });
   const movie = await response.json();
-  createModal(id, movie);
+  const AllComments = await getComments(id);
+  const comments = generateComments(AllComments) || [];
+  console.log(comments);
+  createModal(id, movie, comments, AllComments.length);
   const commentBtns = document.querySelectorAll('.comment-popup-btns');
   commentBtns.forEach((btn) => {
     btn.addEventListener('click', () => {

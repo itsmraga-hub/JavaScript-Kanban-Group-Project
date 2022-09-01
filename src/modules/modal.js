@@ -1,11 +1,21 @@
 import formData from './commentForm.js';
 
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth();
+const day = date.getDay();
+
+const today = `${year}-${month}-${day}`;
+
 const hideModal = (e) => {
   document.querySelector('.movies-list').style.filter = 'blur(0px)';
   e.target.parentElement.parentElement.remove();
 };
-const createModal = async (id, movie) => {
-  document.querySelector('.modal-popup').innerHTML += `<div class="modal-container" id=${id}>
+
+const commentCounter = (arr) => arr.length;
+
+const createModal = async (id, movie, comments, num) => {
+  document.querySelector('.modal-popup').innerHTML = `<div class="modal-container" id=${id}>
   <div class="modal-header">
   <i class="fa-solid fa-arrow-left-long" id="closeModal" onclick="hideModal(this)"></i>
   </div>
@@ -30,37 +40,8 @@ const createModal = async (id, movie) => {
       </ul>
       ${movie.summary}
       <div class="comments-container">
-        <h3>Comments 3</h3>
-        <ul class="comments-list">
-          <li class="comment">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem,
-            repellat.
-          </li>
-          <li class="comment">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-            ullam.
-          </li>
-          <li class="comment">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam,
-            perferendis?
-          </li>
-          <li class="comment">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, quod.
-          </li>
-          <li class="comment">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, quod.
-          </li>
-          <li class="comment">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, quod.
-          </li>
-          <li class="comment">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis, quod.
-          </li>
-        </ul>
+        <h3>Comments ${num}</h3>
+        <ul class="comments-list">${comments}</ul>
       </div>
       <div class="form-container">
         <h3>Add a Comment</h3>
@@ -90,10 +71,21 @@ const createModal = async (id, movie) => {
 </div>`;
   // const btn = document.querySelector('#closeModal');
   // console.log(btn);
-  const form = document.querySelector('#form');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    formData(form);
-  });
+  // const form = document.querySelector('#form');
+  // form.addEventListener('submit', (e) => {
+  //   e.preventDefault();
+  //   if (form[0].value && form[1].value) {
+  //     let num = Number(e.target.parentElement.parentElement.children[3].children[0].textContent.split(' ')[1]);
+  //     num += 1;
+  //     e.target.parentElement.parentElement.children[3].children[0].textContent = `Comments ${num}`;
+  //     e.target.parentElement.parentElement.children[3].children[1].innerHTML += `<li class="comment">${today} ${form[0].value}: ${form[1].value} </li>`;
+  //     formData(form);
+  //   }
+
+  //   const commentsOnPage = document.querySelectorAll('comment');
+  //   const arr = Array.from(commentsOnPage);
+  //   // eslint-disable-next-line no-unused-vars
+  //   const numOfComments = commentCounter(arr);
+  // });
 };
-export { createModal, hideModal };
+export { createModal, hideModal, commentCounter };
