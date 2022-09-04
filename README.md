@@ -15,7 +15,7 @@
 
 ## Live Demo (if available)
 
-[Coming soon](https://)
+[Coming soon](https://itsmraga-hub.github.io/JavaScript-Kanban-Group-Project/)
 
 ## Getting Started
 
